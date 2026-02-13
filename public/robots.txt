@@ -1,0 +1,13 @@
+# robots.txt for Meravanige
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.meravanige.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Disallow specific paths if needed
+# Disallow: /private/
+# Disallow: /admin/
