@@ -291,32 +291,32 @@ export const KADAKK_VOICES: Voice[] = [
   {
     name: "IAS Officer Rajeshwari",
     role: "Bureaucracy & Governance",
-    url: "https://www.youtube.com/watch?v=GwLW7ZA4TlI",
+    url: "https://www.youtube.com/embed/GwLW7ZA4TlI",
   },
   {
     name: "Reena Philips",
     role: "Wildlife Conservation",
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    url: "https://www.youtube.com/embed/-jpud7-KuxY",
   },
   {
     name: "Ramya Sulekha",
     role: "Mysticism & Tarot",
-    url: "https://www.youtube.com/watch?v=ompVpgwIvho",
+    url: "https://www.youtube.com/embed/ompVpgwIvho",
   },
   {
     name: "Shashank",
     role: "Filmmaking",
-    url: "https://www.youtube.com/watch?v=JpCNQugfqic",
+    url: "https://www.youtube.com/embed/JpCNQugfqic",
   },
   {
     name: "Kishore",
     role: "Activism & Agriculture",
-    url: "https://www.youtube.com/watch?v=Kh8HoQdDm3g",
+    url: "https://www.youtube.com/embed/Kh8HoQdDm3g",
   },
   {
     name: "Dr. Suresh Kammar",
     role: "Human Rights",
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    url: "https://www.youtube.com/embed/f2fKnX4wH0Q",
   },
 ];
 

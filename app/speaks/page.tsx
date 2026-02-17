@@ -133,47 +133,72 @@ export default function Speaks() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
             {KADAKK_VOICES.map((voice, idx) => (
-              <motion.a
+              <motion.div
                 key={idx}
-                href={voice.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 onMouseEnter={() => setActiveVoice(idx)}
                 onMouseLeave={() => setActiveVoice(null)}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="group relative bg-white border border-brand-blue/10 p-0 h-full flex flex-col hover:-translate-y-1 md:hover:-translate-y-2 hover:-translate-x-1 md:hover:-translate-x-2 hover:shadow-[6px_6px_0px_0px_#fccd18] md:hover:shadow-[8px_8px_0px_0px_#fccd18] transition-all duration-300 rounded-sm overflow-hidden cursor-pointer"
+                className="group relative bg-white border-2 border-brand-blue-dark/10 p-0 h-full flex flex-col hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[8px_8px_0px_0px_#fccd18] md:hover:shadow-[10px_10px_0px_0px_#fccd18] transition-all duration-300 rounded-sm overflow-hidden"
               >
-                <div className="p-6 md:p-8 border-t border-brand-blue/10 bg-white flex-grow flex flex-col justify-between">
+                {/* YouTube Embed Section */}
+                <div className="relative w-full aspect-video bg-gradient-to-br from-brand-blue-dark to-brand-blue overflow-hidden">
+                  {/* Decorative overlay on hover */}
+                  <div className="absolute inset-0 bg-brand-yellow/0 group-hover:bg-brand-yellow/10 transition-all duration-300 z-10 pointer-events-none"></div>
+
+                  {/* YouTube iframe */}
+                  <iframe
+                    src={voice.url}
+                    title={voice.name}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full border-0"
+                  ></iframe>
+
+                  {/* Optional: Play indicator badge */}
+                  <div className="absolute top-3 right-3 z-20 bg-brand-yellow/90 backdrop-blur-sm text-brand-blue-dark px-2 py-1 rounded-sm flex items-center gap-1.5 shadow-lg">
+                    <Play size={10} fill="currentColor" />
+                    <span className="text-[0.6rem] font-extrabold uppercase tracking-wider">
+                      Watch
+                    </span>
+                  </div>
+                </div>
+
+                {/* Information Section */}
+                <div className="p-5 md:p-6 bg-white flex-grow flex flex-col justify-between border-t-4 border-brand-blue/5 group-hover:border-brand-yellow/50 transition-colors duration-300">
                   <div>
-                    <h4 className="text-xl md:text-2xl font-extrabold text-brand-blue-dark mb-2 md:mb-3 uppercase leading-tight group-hover:text-brand-blue transition-colors">
+                    <h4 className="text-lg md:text-xl font-extrabold text-brand-blue-dark mb-2 uppercase leading-tight group-hover:text-brand-blue transition-colors line-clamp-2">
                       {voice.name}
                     </h4>
-                    <div className="h-1 w-10 md:w-12 bg-brand-blue/10 mb-3 md:mb-4 group-hover:bg-brand-yellow transition-colors duration-300"></div>
-                    <p className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-brand-blue-dark/60">
+
+                    {/* Decorative accent line */}
+                    <div className="h-1 w-12 md:w-14 bg-brand-blue/20 mb-3 group-hover:bg-brand-yellow group-hover:w-full transition-all duration-500"></div>
+
+                    <p className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-brand-blue-dark/60 mb-4">
                       {voice.role}
                     </p>
                   </div>
 
-                  <div className="mt-6 md:mt-8 pt-3 md:pt-4 border-t border-brand-blue/5 flex items-center justify-between">
-                    <div className="flex items-center gap-1.5 md:gap-2 text-brand-blue-dark/40 text-[0.65rem] md:text-xs font-bold uppercase tracking-wider">
-                      <BarChart3 size={12} className="md:hidden" />
-                      <BarChart3 size={14} className="hidden md:block" />
-                      <span>1.2k Listens</span>
-                    </div>
-                    <ArrowUpRight
-                      size={16}
-                      className="text-brand-blue-dark/20 group-hover:text-brand-blue transition-colors md:hidden"
-                    />
-                    <ArrowUpRight
-                      size={18}
-                      className="text-brand-blue-dark/20 group-hover:text-brand-blue transition-colors hidden md:block"
-                    />
+                  {/* Stats & CTA Section */}
+                  <div className="space-y-3">
+                    {/* External link button */}
+                    <a
+                      href={voice.url.replace("/embed/", "/watch?v=")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full py-2.5 bg-brand-blue-dark/5 group-hover:bg-brand-blue group-hover:text-white text-brand-blue-dark text-xs font-extrabold uppercase tracking-wider rounded-sm transition-all duration-300 border border-transparent group-hover:border-brand-blue-dark"
+                    >
+                      <span>Watch Full</span>
+                      <ArrowUpRight
+                        size={14}
+                        className="group-hover:rotate-45 transition-transform duration-300"
+                      />
+                    </a>
                   </div>
                 </div>
-              </motion.a>
+              </motion.div>
             ))}
           </div>
         </div>
