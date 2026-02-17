@@ -98,17 +98,37 @@ const Footer: React.FC = () => {
                   Our Brands
                 </h4>
                 <ul className="space-y-2">
-                  <li className="text-white/70 font-medium text-sm hover:text-brand-yellow transition-colors">
-                    Meravanige
+                  <li>
+                    <Link
+                      href="/"
+                      className="text-white/70 font-medium text-sm hover:text-brand-yellow transition-colors cursor-pointer"
+                    >
+                      Meravanige
+                    </Link>
                   </li>
-                  <li className="text-white/70 font-medium text-sm hover:text-brand-yellow transition-colors">
-                    ZeekCreatives
+                  <li>
+                    <Link
+                      href="/work#zeek-creatives"
+                      className="text-white/70 font-medium text-sm hover:text-brand-yellow transition-colors cursor-pointer"
+                    >
+                      Zeekreatives
+                    </Link>
                   </li>
-                  <li className="text-white/70 font-medium text-sm hover:text-brand-yellow transition-colors">
-                    ZeekRealities
+                  <li>
+                    <Link
+                      href="/work#zeek-realities"
+                      className="text-white/70 font-medium text-sm hover:text-brand-yellow transition-colors cursor-pointer"
+                    >
+                      ZeekRealities
+                    </Link>
                   </li>
-                  <li className="text-white/70 font-medium text-sm hover:text-brand-yellow transition-colors">
-                    Kadakk Talks
+                  <li>
+                    <Link
+                      href="/speaks"
+                      className="text-white/70 font-medium text-sm hover:text-brand-yellow transition-colors cursor-pointer"
+                    >
+                      Kadakk Talks
+                    </Link>
                   </li>
                 </ul>
               </div>

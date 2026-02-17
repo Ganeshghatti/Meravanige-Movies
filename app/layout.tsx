@@ -24,7 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth overflow-x-hidden">
+    <html
+      lang="en"
+      className="scroll-smooth overflow-x-hidden"
+      suppressHydrationWarning
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -35,6 +39,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${plusJakartaSans.variable} font-sans bg-brand-white min-h-screen text-brand-blue-dark antialiased`}
+        suppressHydrationWarning
       >
         {/* Global Pattern Overlay */}
         <div className="fixed inset-0 bg-dot-pattern opacity-[0.03] pointer-events-none z-0 mix-blend-multiply"></div>

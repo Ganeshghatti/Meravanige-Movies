@@ -105,9 +105,11 @@ const Navbar: React.FC = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`focus:outline-none transition-colors duration-500 flex-shrink-0 ${
-              scrolled
+              isOpen
                 ? "text-white hover:text-brand-yellow"
-                : "text-brand-blue-dark hover:text-brand-blue"
+                : scrolled
+                  ? "text-white hover:text-brand-yellow"
+                  : "text-brand-blue-dark hover:text-brand-blue"
             }`}
             aria-label="Toggle menu"
           >

@@ -267,8 +267,8 @@ export default function OurWork() {
             <div className="max-w-md">
               <p className="font-medium italic text-lg md:text-xl text-brand-blue-dark/80 border-l-4 border-brand-yellow pl-4 md:pl-6">
                 We build visual stories that define brands and promote cinema.
-                ZeekCreatives blends design, digital culture, and storytelling
-                to create campaigns that feel relevant, engaging, and memorable.
+                Zeekreatives blends design, digital culture, and storytelling to
+                create campaigns that feel relevant, engaging, and memorable.
               </p>
             </div>
           </div>
@@ -404,11 +404,13 @@ export default function OurWork() {
             "Whether it's a blockbuster release or a luxury villa, we have the
             blueprint."
           </p>
-          <button className="px-8 md:px-12 py-4 md:py-5 bg-brand-blue-dark text-white text-xs md:text-sm font-extrabold uppercase tracking-[0.25em] hover:bg-white hover:text-brand-blue-dark hover:shadow-2xl transition-all transform hover:-translate-y-1 rounded-sm flex items-center gap-2 md:gap-3 mx-auto shadow-[4px_4px_0px_0px_#ffffff]">
-            Let's Collaborate{" "}
-            <CornerDownRight size={14} className="md:hidden" />
-            <CornerDownRight size={16} className="hidden md:block" />
-          </button>
+          <Link href="/contact">
+            <button className="px-8 md:px-12 py-4 md:py-5 bg-brand-blue-dark text-white text-xs md:text-sm font-extrabold uppercase tracking-[0.25em] hover:bg-white hover:text-brand-blue-dark hover:shadow-2xl transition-all transform hover:-translate-y-1 rounded-sm flex items-center gap-2 md:gap-3 mx-auto shadow-[4px_4px_0px_0px_#ffffff]">
+              Let's Collaborate{" "}
+              <CornerDownRight size={14} className="md:hidden" />
+              <CornerDownRight size={16} className="hidden md:block" />
+            </button>
+          </Link>
         </div>
       </section>
     </motion.div>

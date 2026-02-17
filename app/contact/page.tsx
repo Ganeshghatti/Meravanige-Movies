@@ -28,7 +28,7 @@ const ContactInput: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = (
   <div className="relative group">
     <input
       {...props}
-      className="w-full bg-brand-white border-2 border-brand-blue/10 p-4 outline-none text-brand-blue-dark placeholder:text-brand-blue-dark/30 font-medium transition-all duration-300 focus:border-brand-blue focus:shadow-[4px_4px_0px_0px_#fccd18] hover:border-brand-blue/30"
+      className="w-full bg-brand-white border-2 border-brand-blue/10 p-3 md:p-4 outline-none text-brand-blue-dark placeholder:text-brand-blue-dark/30 font-medium transition-all duration-300 focus:border-brand-blue focus:shadow-[2px_2px_0px_0px_#fccd18] md:focus:shadow-[4px_4px_0px_0px_#fccd18] hover:border-brand-blue/30"
     />
   </div>
 );
@@ -39,7 +39,7 @@ const ContactTextarea: React.FC<
   <div className="relative group">
     <textarea
       {...props}
-      className="w-full bg-brand-white border-2 border-brand-blue/10 p-4 outline-none text-brand-blue-dark placeholder:text-brand-blue-dark/30 font-medium transition-all duration-300 focus:border-brand-blue focus:shadow-[4px_4px_0px_0px_#fccd18] hover:border-brand-blue/30 min-h-[150px] resize-none"
+      className="w-full bg-brand-white border-2 border-brand-blue/10 p-3 md:p-4 outline-none text-brand-blue-dark placeholder:text-brand-blue-dark/30 font-medium transition-all duration-300 focus:border-brand-blue focus:shadow-[2px_2px_0px_0px_#fccd18] md:focus:shadow-[4px_4px_0px_0px_#fccd18] hover:border-brand-blue/30 min-h-[150px] resize-none"
     />
   </div>
 );
@@ -52,15 +52,15 @@ const ContactInfoCard: React.FC<{
   delay?: number;
 }> = ({ icon, label, value, href, delay = 0 }) => {
   const CardContent = (
-    <div className="flex items-start gap-4 p-6 bg-brand-white border border-brand-blue/10 hover:border-brand-blue transition-colors group cursor-default h-full shadow-sm hover:shadow-md">
-      <div className="w-10 h-10 bg-brand-blue/5 rounded-full flex items-center justify-center text-brand-blue group-hover:bg-brand-yellow group-hover:text-brand-blue-dark transition-all duration-300 shrink-0">
+    <div className="flex items-start gap-3 md:gap-4 p-4 md:p-6 bg-brand-white border border-brand-blue/10 hover:border-brand-blue transition-colors group cursor-default h-full shadow-sm hover:shadow-md overflow-hidden">
+      <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-blue/5 rounded-full flex items-center justify-center text-brand-blue group-hover:bg-brand-yellow group-hover:text-brand-blue-dark transition-all duration-300 shrink-0">
         {icon}
       </div>
-      <div>
-        <h4 className="text-sm font-bold text-brand-blue-dark/50 uppercase tracking-widest mb-1">
+      <div className="min-w-0 flex-1">
+        <h4 className="text-xs md:text-sm font-bold text-brand-blue-dark/50 uppercase tracking-widest mb-1">
           {label}
         </h4>
-        <p className="text-lg md:text-xl font-bold text-brand-blue-dark group-hover:text-brand-blue transition-colors">
+        <p className="text-sm md:text-lg lg:text-xl font-bold text-brand-blue-dark group-hover:text-brand-blue transition-colors break-all overflow-wrap-anywhere">
           {value}
         </p>
       </div>
@@ -125,7 +125,7 @@ export default function Contact() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="min-h-screen bg-brand-white text-brand-blue-dark flex flex-col"
+      className="min-h-screen bg-brand-white text-brand-blue-dark flex flex-col overflow-x-hidden max-w-[100vw]"
     >
       {/* HEADER SECTION */}
       <section className="relative pt-10 md:pt-16 pb-12 md:pb-20 border-b border-brand-blue/10 overflow-hidden">
@@ -151,14 +151,14 @@ export default function Contact() {
             </div>
 
             {/* Headline */}
-            <div className="max-w-4xl">
-              <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw] leading-[0.9] font-extrabold text-brand-blue-dark tracking-tighter">
+            <div className="max-w-4xl overflow-hidden">
+              <h1 className="text-[10vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw] leading-[0.9] font-extrabold text-brand-blue-dark tracking-tighter break-words">
                 START A <br />
                 <span className="text-brand-blue">CONVERSATION.</span>
               </h1>
             </div>
 
-            <p className="max-w-xl text-lg md:text-xl font-medium text-brand-blue-dark/60 leading-relaxed mt-4">
+            <p className="max-w-xl text-base md:text-lg lg:text-xl font-medium text-brand-blue-dark/60 leading-relaxed mt-4">
               Have a project in mind? We'd love to hear about it. Let's discuss
               how we can help your story travel further and speak louder.
             </p>
@@ -167,12 +167,12 @@ export default function Contact() {
       </section>
 
       {/* CONTENT SECTION */}
-      <section className="flex-grow py-12 md:py-20 bg-brand-white relative">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+      <section className="flex-grow py-12 md:py-20 bg-brand-white relative overflow-x-hidden">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 overflow-x-hidden">
+          <div className="grid lg:grid-cols-12 gap-8 md:gap-12 lg:gap-20">
             {/* LEFT COLUMN: Contact Details */}
-            <div className="lg:col-span-5 flex flex-col gap-6 md:gap-8 order-2 lg:order-1">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
+            <div className="lg:col-span-5 flex flex-col gap-6 md:gap-8 order-2 lg:order-1 overflow-hidden">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-6">
                 <ContactInfoCard
                   icon={<Mail size={20} />}
                   label="Email Us"
@@ -201,10 +201,10 @@ export default function Contact() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="mt-4 md:mt-8 p-8 bg-brand-blue text-white relative overflow-hidden rounded-sm shadow-xl"
+                className="mt-4 md:mt-8 p-4 md:p-6 lg:p-8 bg-brand-blue text-white relative overflow-hidden rounded-sm shadow-xl"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/10 rounded-full blur-2xl transform translate-x-10 -translate-y-10"></div>
-                <h4 className="text-xl font-bold mb-4 relative z-10">
+                <h4 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 lg:mb-4 relative z-10">
                   We reply fast.
                 </h4>
                 <p className="text-white/80 leading-relaxed relative z-10 text-sm">
@@ -215,17 +215,20 @@ export default function Contact() {
             </div>
 
             {/* RIGHT COLUMN: Contact Form */}
-            <div className="lg:col-span-7 order-1 lg:order-2">
+            <div className="lg:col-span-7 order-1 lg:order-2 overflow-hidden min-w-0">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-white p-6 md:p-10 border border-brand-blue/10 shadow-lg rounded-sm relative"
+                className="bg-white p-4 sm:p-6 md:p-8 lg:p-10 border border-brand-blue/10 shadow-lg rounded-sm relative overflow-hidden"
               >
                 {!submitted ? (
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                    <div className="grid md:grid-cols-2 gap-6">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="flex flex-col gap-4 md:gap-6"
+                  >
+                    <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                       <div className="flex flex-col gap-2">
                         <label className="text-xs font-bold uppercase tracking-wider text-brand-blue-dark/60">
                           Your Name
@@ -285,7 +288,7 @@ export default function Contact() {
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.98 }}
                       disabled={isSubmitting}
-                      className="mt-2 py-4 px-8 bg-brand-blue-dark text-white font-bold tracking-widest uppercase flex items-center justify-center gap-3 hover:bg-brand-blue hover:shadow-[6px_6px_0px_0px_#fccd18] transition-all duration-300 rounded-sm disabled:opacity-70 disabled:cursor-not-allowed group w-full md:w-auto self-start"
+                      className="mt-2 py-4 px-6 md:px-8 bg-brand-blue-dark text-white font-bold tracking-widest uppercase flex items-center justify-center gap-3 hover:bg-brand-blue hover:shadow-[6px_6px_0px_0px_#fccd18] transition-all duration-300 rounded-sm disabled:opacity-70 disabled:cursor-not-allowed group w-full md:w-auto self-start text-xs md:text-sm"
                     >
                       {isSubmitting ? (
                         "Sending..."

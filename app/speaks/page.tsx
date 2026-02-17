@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import {
   KADAKK_VOICES,
   KADAKK_STATS,
@@ -313,9 +314,11 @@ export default function Speaks() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-8 md:px-10 py-4 bg-brand-yellow text-brand-blue-dark font-extrabold text-sm uppercase tracking-widest hover:bg-white hover:shadow-[4px_4px_0px_0px_#ffffff] transition-all transform hover:-translate-y-1 rounded-sm flex items-center justify-center gap-3">
-                  BE KADAKK <ArrowRight size={18} />
-                </button>
+                <Link href="/contact">
+                  <button className="px-8 md:px-10 py-4 bg-brand-yellow text-brand-blue-dark font-extrabold text-sm uppercase tracking-widest hover:bg-white hover:shadow-[4px_4px_0px_0px_#ffffff] transition-all transform hover:-translate-y-1 rounded-sm flex items-center justify-center gap-3">
+                    BE KADAKK <ArrowRight size={18} />
+                  </button>
+                </Link>
               </div>
             </div>
 
